@@ -25,10 +25,15 @@ namespace proiectDaw.Data
                 .HasOne(p => p.Project)
                 .WithMany(b => b.SoftwareDevelopers)
                 .HasForeignKey(p => p.ProjectId);
+            builder.Entity<SoftwareDeveloper>()
+                .HasOne(p => p.Vacation)
+                .WithOne(b => b.SoftwareDeveloper)
+                .HasForeignKey<Vacation>(k => k.SoftwareDeveloperId);
         }
 
         public DbSet<SoftwareDeveloper> softwareDevelopers { get; set; }
         public DbSet<Project> projects { get; set; }
+        public DbSet<Vacation> vacations { get; set; }
     }
 
 }

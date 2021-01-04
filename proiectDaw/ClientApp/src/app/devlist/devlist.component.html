@@ -8,6 +8,7 @@
         <tr>
             <th>Id</th>
             <th>Name</th>
+            <th>Email</th>
             <th>Hire Year</th>
             <th>ProjectId</th>
         </tr>
@@ -16,8 +17,12 @@
         <tr *ngFor="let developer of developers">
             <td>{{ developer.id }}</td>
             <td>{{ developer.name }}</td>
+            <td>{{ developer.email }}
             <td>{{ developer.hireYear }}</td>
             <td>{{ developer.projectId }}</td>
         </tr>
     </tbody>
 </table>
+
+<input type="text" [formControl]="test">
+<button (click)="buttonClicked()">press me</button>

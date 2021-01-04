@@ -18,7 +18,7 @@ namespace proiectDaw.Data
             _logger = logger;
         }
 
-        private Project createProject(string ProjectName, string[] DevNames, int[] HireYears)
+        private Project createProject(string ProjectName, string[] DevNames, string[] Emails, int[] HireYears)
         {
             var project = new Project
             {
@@ -32,9 +32,22 @@ namespace proiectDaw.Data
                 var dev = new SoftwareDeveloper
                 {
                     Name = DevNames[i],
+                    Email = Emails[i],
                     HireYear = HireYears[i],
                     Project = project,
                 };
+
+                var vacation = new Vacation
+                {
+                    AnnualLeave = 20,
+                    BloodDonationLeave = 5,
+                    FourHourLeave = 8,
+                    SoftwareDeveloperId = dev.Id,
+                    SoftwareDeveloper = dev
+                };
+
+                dev.Vacation = vacation;
+
                 project.SoftwareDevelopers.Add(dev);
             }
 
@@ -53,10 +66,12 @@ namespace proiectDaw.Data
             _context.softwareDevelopers.RemoveRange(_context.softwareDevelopers);
             _context.SaveChanges();
 
-            var project1 = createProject("Daw project", new string[] { "Necula Florin-Alexandru", "Stoian Mihai" }, new int[] { 2020, 2019 });
+            var project1 = createProject("Daw project", new string[] { "Necula Florin-Alexandru", "Stoian Mihai" },
+                new string[] { "necula@gmail.com", "stoian@gmail.com"}, new int[] { 2020, 2019 });
             _context.projects.Add(project1);
 
-            var project2 = createProject("Dezvoltarea jocurilor", new string[] { "Necula Florin-Alexandru", "Sugeac Andrei", "Adi Cinca", "Albu Andreea" }, new int[] { 2020, 2019, 2018, 2017 });
+            var project2 = createProject("Dezvoltarea jocurilor", new string[] {"Sugeac Andrei", "Adi Cinca", "Albu Andreea" },
+                new string[] { "sugeac@gmail.com", "cinca@gmail.com", "albu@gmail.com" }, new int[] { 2019, 2018, 2017 });
             _context.projects.Add(project2);
 
             _context.SaveChanges();

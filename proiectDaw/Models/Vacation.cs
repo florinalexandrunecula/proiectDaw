@@ -6,22 +6,20 @@ using System.Threading.Tasks;
 
 namespace proiectDaw.Models
 {
-    public class SoftwareDeveloper
+    public class Vacation
     {
         [Key]
         public int Id { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public int AnnualLeave { get; set; }
         [Required]
-        public string Email { get; set; }
+        public int BloodDonationLeave { get; set; }
         [Required]
-        public int HireYear { get; set; }
+        public int FourHourLeave { get; set; }
         [Required]
-        public int ProjectId { get; set; }
+        public int SoftwareDeveloperId { get; set; }
         [Required]
-        public Project Project { get; set; }
-        [Required]
-        public Vacation Vacation { get; set; }
+        public SoftwareDeveloper SoftwareDeveloper { get; set; }
     }
 }
