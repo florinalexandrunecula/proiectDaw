@@ -17,5 +17,18 @@ namespace proiectDaw.Data
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
         {
         }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.Entity<SoftwareDeveloper>()
+                .HasOne(p => p.Project)
+                .WithMany(b => b.SoftwareDevelopers)
+                .HasForeignKey(p => p.ProjectId);
+        }
+
+        public DbSet<SoftwareDeveloper> softwareDevelopers { get; set; }
+        public DbSet<Project> projects { get; set; }
     }
+
 }

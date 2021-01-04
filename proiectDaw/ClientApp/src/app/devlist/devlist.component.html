@@ -1,0 +1,23 @@
+﻿<h1 id="tableLabel">Software Developers</h1>
+
+
+<p *ngIf="!developers"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="developers">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Hire Year</th>
+            <th>ProjectId</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let developer of developers">
+            <td>{{ developer.id }}</td>
+            <td>{{ developer.name }}</td>
+            <td>{{ developer.hireYear }}</td>
+            <td>{{ developer.projectId }}</td>
+        </tr>
+    </tbody>
+</table>
