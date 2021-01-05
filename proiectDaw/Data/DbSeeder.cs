@@ -18,12 +18,17 @@ namespace proiectDaw.Data
             _logger = logger;
         }
 
-        private Project createProject(string ProjectName, string[] DevNames, string[] Emails, int[] HireYears)
+        private Project createProject(string ProjectName, bool isNull, string[] DevNames, string[] Emails, int[] HireYears)
         {
             var project = new Project
             {
                 ProjectName = ProjectName
             };
+
+            if (isNull == true)
+            {
+                return project;
+            }
 
             project.SoftwareDevelopers = new List<SoftwareDeveloper>();
 
@@ -66,13 +71,18 @@ namespace proiectDaw.Data
             _context.softwareDevelopers.RemoveRange(_context.softwareDevelopers);
             _context.SaveChanges();
 
-            var project1 = createProject("Daw project", new string[] { "Necula Florin-Alexandru", "Stoian Mihai" },
+            var project1 = createProject("Daw project", false, new string[] { "Necula Florin-Alexandru", "Stoian Mihai" },
                 new string[] { "necula@gmail.com", "stoian@gmail.com"}, new int[] { 2020, 2019 });
             _context.projects.Add(project1);
 
-            var project2 = createProject("Dezvoltarea jocurilor", new string[] {"Sugeac Andrei", "Adi Cinca", "Albu Andreea" },
+            var project2 = createProject("Dezvoltarea jocurilor", false, new string[] {"Sugeac Andrei", "Adi Cinca", "Albu Andreea" },
                 new string[] { "sugeac@gmail.com", "cinca@gmail.com", "albu@gmail.com" }, new int[] { 2019, 2018, 2017 });
             _context.projects.Add(project2);
+
+            var project3 = createProject("No Project", true, null, null, null);
+            project3.Id = -1;
+
+            _context.projects.Add(project3);
 
             _context.SaveChanges();
 

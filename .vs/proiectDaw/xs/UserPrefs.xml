@@ -1,0 +1,57 @@
+﻿<Properties StartupConfiguration="{BC70918E-DEEB-407B-8786-0FEB815F4B19}|Default">
+  <MonoDevelop.Ide.ItemProperties.proiectDaw PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="proiectDaw/ClientApp/src/app/hire-page/hire-page.component.ts">
+    <Files>
+      <File FileName="proiectDaw/ClientApp/package.json" Line="1" Column="1" />
+      <File FileName="proiectDaw/Controllers/SoftwareDevelopersController.cs" Line="60" Column="43" />
+      <File FileName="proiectDaw/Controllers/WeatherForecastController.cs" Line="1" Column="1" />
+      <File FileName="proiectDaw/ClientApp/src/app/app.module.ts" Line="41" Column="55" />
+      <File FileName="proiectDaw/ClientApp/src/app/hire-page/hire-page.component.ts" Line="30" Column="60" />
+      <File FileName="proiectDaw/ClientApp/src/app/hire-page/hire-page.component.html" Line="4" Column="1" />
+      <File FileName="proiectDaw/ClientApp/src/app/nav-menu/nav-menu.component.html" Line="40" Column="18" />
+      <File FileName="proiectDaw/ClientApp/src/app/devlist/devlist.component.ts" Line="16" Column="43" />
+      <File FileName="proiectDaw/ClientApp/src/app/devlist/devlist.component.html" Line="5" Column="63" />
+      <File FileName="proiectDaw/ClientApp/src/app/fetch-data/fetch-data.component.ts" Line="18" Column="1" />
+      <File FileName="proiectDaw/ClientApp/src/app/fetch-data/fetch-data.component.html" Line="1" Column="1" />
+      <File FileName="proiectDaw/ClientApp/src/app/home/home.component.ts" Line="1" Column="1" />
+      <File FileName="proiectDaw/Data/DbSeeder.cs" Line="93" Column="1" />
+      <File FileName="proiectDaw/Models/SoftwareDeveloper.cs" Line="23" Column="1" />
+      <File FileName="proiectDaw/Models/Project.cs" Line="15" Column="33" />
+      <File FileName="proiectDaw/ClientApp/src/app/home/home.component.html" Line="22" Column="5" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="proiectDaw" expanded="True">
+            <Node name="proiectDaw" expanded="True">
+              <Node name="ClientApp" expanded="True">
+                <Node name="src" expanded="True">
+                  <Node name="app" expanded="True">
+                    <Node name="devlist" expanded="True" />
+                    <Node name="fetch-data" expanded="True" />
+                    <Node name="hire-page" expanded="True">
+                      <Node name="hire-page.component.ts" selected="True" />
+                    </Node>
+                    <Node name="home" expanded="True" />
+                    <Node name="nav-menu" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="Migrations" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Pages" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

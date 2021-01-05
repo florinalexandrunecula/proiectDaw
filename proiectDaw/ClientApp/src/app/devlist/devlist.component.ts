@@ -8,16 +8,14 @@ import { FormControl } from '@angular/forms';
 })
 export class DevlistComponent {
   public developers: SoftwareDeveloper[];
-  public test = new FormControl(null);
+  public count: int;
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     http.get<SoftwareDeveloper[]>(baseUrl + 'softwareDevelopers').subscribe(result => {
       this.developers = result;
+      this.count = this.developers.length;
       console.log({ result });
     }, error => console.error(error));
-  }
-  public buttonClicked() {
-    console.log({ test: this.test.value });
   }
   }
 

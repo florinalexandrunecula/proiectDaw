@@ -14,6 +14,7 @@ import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.
 import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { DevlistComponent } from './devlist/devlist.component';
+import { HirePageComponent } from './hire-page/hire-page.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { DevlistComponent } from './devlist/devlist.component';
     CounterComponent,
     FetchDataComponent,
     DevlistComponent,
+    HirePageComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -36,6 +38,7 @@ import { DevlistComponent } from './devlist/devlist.component';
       { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
       //{ path: 'devlist', component: DevlistComponent, canActivate: [AuthorizeGuard] },
       { path: 'devlist', component: DevlistComponent },
+      { path: 'hirepage', component: HirePageComponent },
     ])
   ],
   providers: [

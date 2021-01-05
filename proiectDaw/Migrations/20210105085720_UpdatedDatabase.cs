@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace proiectDaw.Migrations
 {
-    public partial class UpdateDatabaseWithVacation : Migration
+    public partial class UpdatedDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -207,6 +207,7 @@ namespace proiectDaw.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(nullable: false),
+                    Email = table.Column<string>(nullable: false),
                     HireYear = table.Column<int>(nullable: false),
                     ProjectId = table.Column<int>(nullable: false)
                 },
