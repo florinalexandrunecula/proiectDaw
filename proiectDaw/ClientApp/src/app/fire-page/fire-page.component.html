@@ -1,0 +1,18 @@
+﻿<h1>Firing someone?</h1>
+<h3>Please fill in the following formular, and the app will do the <code>REST</code>!</h3>
+<br>
+
+<p>Name:</p>
+<input type="text" [formControl]="name" placeholder="Enter name...">
+
+<p>Email:</p>
+<input type="text" [formControl]="email" placeholder="Enter email...">
+
+<br>
+
+<button (click)="buttonClicked()">Submit the form!</button>
+
+<br>
+<br>
+
+<h4>{{ result }}</h4>

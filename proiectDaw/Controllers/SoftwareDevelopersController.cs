@@ -77,5 +77,39 @@ namespace proiectDaw.Controllers
 
 
         }
+
+        [HttpPost("/softwareDeveloper/delete")]
+        public Boolean Delete()
+        {
+            Console.WriteLine("Package received...");
+
+            var received = Request.Form.Keys;
+
+            foreach (var key in received)
+            {
+                var json = JObject.Parse(key);
+
+                var name = json["name"].ToString();
+                var email = json["email"].ToString();
+
+                var dev = (_context.softwareDevelopers.Where(dev => dev.Name == name && dev.Email == email)).First();
+
+                var project = (_context.projects.Where(prj => prj.Id == dev.ProjectId)).First();
+                project.SoftwareDevelopers.Remove(dev);
+
+                var vacation = (_context.vacations.Where(vac => vac.SoftwareDeveloperId == dev.Id)).First();
+                _context.vacations.Remove(vacation);
+
+                _context.softwareDevelopers.Remove(dev);
+
+                _context.SaveChanges();
+                return true;
+            }
+
+            return true;
+
+
+
+        }
     }
 }

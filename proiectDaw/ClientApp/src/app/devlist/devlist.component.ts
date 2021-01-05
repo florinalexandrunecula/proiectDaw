@@ -8,7 +8,7 @@ import { FormControl } from '@angular/forms';
 })
 export class DevlistComponent {
   public developers: SoftwareDeveloper[];
-  public count: int;
+  public count: number;
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     http.get<SoftwareDeveloper[]>(baseUrl + 'softwareDevelopers').subscribe(result => {

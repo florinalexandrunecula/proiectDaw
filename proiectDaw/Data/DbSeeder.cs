@@ -69,6 +69,8 @@ namespace proiectDaw.Data
             // Making sure the DB is clean
             _context.projects.RemoveRange(_context.projects);
             _context.softwareDevelopers.RemoveRange(_context.softwareDevelopers);
+            _context.vacations.RemoveRange(_context.vacations);
+
             _context.SaveChanges();
 
             var project1 = createProject("Daw project", false, new string[] { "Necula Florin-Alexandru", "Stoian Mihai" },
