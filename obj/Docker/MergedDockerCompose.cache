@@ -1,0 +1,16 @@
+services:
+  proiectdaw:
+    build:
+      context: /Users/alexnecula/Documents/proiectDaw
+      dockerfile: proiectDaw/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: proiectdaw
+    ports:
+    - target: 80
+    - target: 443
+    volumes:
+    - /Users/alexnecula/.aspnet/https:/root/.aspnet/https:ro
+    - /Users/alexnecula/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
+version: '3.4'
