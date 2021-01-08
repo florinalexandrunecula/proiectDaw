@@ -16,6 +16,8 @@ import { AuthorizeInterceptor } from 'src/api-authorization/authorize.intercepto
 import { DevlistComponent } from './devlist/devlist.component';
 import { HirePageComponent } from './hire-page/hire-page.component';
 import { FirePageComponent } from './fire-page/fire-page.component';
+import { NoAuthorizationComponent } from './no-authorization/no-authorization.component';
+import { UpdatePageComponent } from './update-page/update-page.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { FirePageComponent } from './fire-page/fire-page.component';
     DevlistComponent,
     HirePageComponent,
     FirePageComponent,
+    NoAuthorizationComponent,
+    UpdatePageComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -42,6 +46,8 @@ import { FirePageComponent } from './fire-page/fire-page.component';
       { path: 'devlist', component: DevlistComponent },
       { path: 'hirepage', component: HirePageComponent },
       { path: 'firepage', component: FirePageComponent },
+      { path: 'no-authorization', component: NoAuthorizationComponent },
+      { path: 'updatepage', component: UpdatePageComponent },
     ])
   ],
   providers: [

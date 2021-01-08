@@ -3,13 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-devlist-component',
-  templateUrl: './devlist.component.html'
+  selector: 'app-no-authorization-component',
+  templateUrl: './no-authorization.component.html'
 })
-export class DevlistComponent {
+export class NoAuthorizationComponent {
   public developers: SoftwareDeveloper[];
   public count: number;
-  public name: string;
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     http.get<SoftwareDeveloper[]>(baseUrl + 'softwareDevelopers').subscribe(result => {
@@ -19,6 +18,7 @@ export class DevlistComponent {
     }, error => console.error(error));
   }
   }
+
 
 interface SoftwareDeveloper {
   id: number;

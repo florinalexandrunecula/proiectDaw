@@ -17,6 +17,8 @@ namespace proiectDaw.Models
         public string Email { get; set; }
         [Required]
         public int HireYear { get; set; }
+        [Required]
+        public string Role { get; set; }
 
         public int ProjectId { get; set; }
         public Project Project { get; set; }

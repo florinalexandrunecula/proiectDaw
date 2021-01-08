@@ -11,7 +11,7 @@ using Newtonsoft.Json.Linq;
 
 namespace proiectDaw.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class SoftwareDevelopersController : ControllerBase
@@ -44,6 +44,7 @@ namespace proiectDaw.Controllers
 
                 var name = json["name"].ToString();
                 var email = json["email"].ToString();
+                var role = json["role"].ToString();
 
                 Console.WriteLine(name);
                 Console.WriteLine(email);
@@ -52,6 +53,7 @@ namespace proiectDaw.Controllers
                 dev.Name = name;
                 dev.Email = email;
                 dev.HireYear = DateTime.Now.Year;
+                dev.Role = role;
                 Console.WriteLine(dev.HireYear.GetType());
 
                 dev.ProjectId = -1;
@@ -96,11 +98,54 @@ namespace proiectDaw.Controllers
 
                 var project = (_context.projects.Where(prj => prj.Id == dev.ProjectId)).First();
                 project.SoftwareDevelopers.Remove(dev);
+                _context.projects.Update(project);
 
                 var vacation = (_context.vacations.Where(vac => vac.SoftwareDeveloperId == dev.Id)).First();
                 _context.vacations.Remove(vacation);
 
                 _context.softwareDevelopers.Remove(dev);
+
+                _context.SaveChanges();
+                return true;
+            }
+
+            return true;
+
+
+
+        }
+
+        [HttpPost("/softwareDeveloper/update")]
+        public Boolean Update()
+        {
+            Console.WriteLine("Package received...");
+
+            var received = Request.Form.Keys;
+
+            foreach (var key in received)
+            {
+                var json = JObject.Parse(key);
+
+                var oldname = json["oldname"].ToString();
+                var oldemail = json["oldemail"].ToString();
+                var oldrole = json["oldrole"].ToString();
+
+                var newname = json["newname"].ToString();
+                var newemail = json["newemail"].ToString();
+                var newrole = json["newrole"].ToString();
+
+                var dev = (_context.softwareDevelopers.Where(dev => dev.Name == oldname && dev.Email == oldemail)).First();
+
+                var project = (_context.projects.Where(prj => prj.Id == dev.ProjectId)).First();
+                project.SoftwareDevelopers.Remove(dev);
+
+                dev.Name = newname;
+                dev.Email = newemail;
+                dev.Role = newrole;
+                _context.softwareDevelopers.Update(dev);
+
+                project.SoftwareDevelopers.Add(dev);
+                _context.projects.Update(project);
 
                 _context.SaveChanges();
                 return true;

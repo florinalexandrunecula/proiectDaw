@@ -18,7 +18,7 @@ namespace proiectDaw.Data
             _logger = logger;
         }
 
-        private Project createProject(string ProjectName, bool isNull, string[] DevNames, string[] Emails, int[] HireYears)
+        private Project createProject(string ProjectName, bool isNull, string[] DevNames, string[] Emails, int[] HireYears, string[] Roles)
         {
             var project = new Project
             {
@@ -39,6 +39,7 @@ namespace proiectDaw.Data
                     Name = DevNames[i],
                     Email = Emails[i],
                     HireYear = HireYears[i],
+                    Role = Roles[i],
                     Project = project,
                 };
 
@@ -74,14 +75,15 @@ namespace proiectDaw.Data
             _context.SaveChanges();
 
             var project1 = createProject("Daw project", false, new string[] { "Necula Florin-Alexandru", "Stoian Mihai" },
-                new string[] { "necula@gmail.com", "stoian@gmail.com"}, new int[] { 2020, 2019 });
+                new string[] { "necula@gmail.com", "stoian@gmail.com"}, new int[] { 2020, 2019 }, new string[] { "Admin", "Dev"});
             _context.projects.Add(project1);
 
             var project2 = createProject("Dezvoltarea jocurilor", false, new string[] {"Sugeac Andrei", "Adi Cinca", "Albu Andreea" },
-                new string[] { "sugeac@gmail.com", "cinca@gmail.com", "albu@gmail.com" }, new int[] { 2019, 2018, 2017 });
+                new string[] { "sugeac@gmail.com", "cinca@gmail.com", "albu@gmail.com" }, new int[] { 2019, 2018, 2017 },
+                new string[] { "Dev", "Dev", "Dev"});
             _context.projects.Add(project2);
 
-            var project3 = createProject("No Project", true, null, null, null);
+            var project3 = createProject("No Project", true, null, null, null, null);
             project3.Id = -1;
 
             _context.projects.Add(project3);

@@ -1,0 +1,30 @@
+﻿<h1>Update employee personal data</h1>
+<h3>Please provide the required informations in the formular</h3>
+<br>
+
+<p>Old Name:</p>
+<input type="text" [formControl]="oldname" placeholder="Enter name...">
+
+<p>Old Email:</p>
+<input type="text" [formControl]="oldemail" placeholder="Enter email...">
+
+<p>Old Role: (Please write Admin or Dev)</p>
+<input type="text" [formControl]="oldrole" placeholder="Enter role...">
+
+<p>New Name:</p>
+<input type="text" [formControl]="newname" placeholder="Enter name...">
+
+<p>New Email:</p>
+<input type="text" [formControl]="newemail" placeholder="Enter email...">
+
+<p>New Role: (Please write Admin or Dev)</p>
+<input type="text" [formControl]="newrole" placeholder="Enter role...">
+
+<br>
+
+<button (click)="buttonClicked()">Submit the form!</button>
+
+<br>
+<br>
+
+<h4>{{ result }}</h4>

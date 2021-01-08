@@ -14,6 +14,7 @@ export class HirePageComponent {
   public result = "";
   public name = new FormControl(null);
   public email = new FormControl(null);
+  public role = new FormControl(null);
 
   public buttonClicked() {
     this.httpClient.post<SoftwareDeveloper>(
@@ -21,6 +22,7 @@ export class HirePageComponent {
       {
         name: this.name.value,
         email: this.email.value,
+        role: this.role.value,
       },
       { headers: { "Content-Type": "application/x-www-form-urlencoded" }}
     )
@@ -30,6 +32,7 @@ export class HirePageComponent {
           this.result = "Successfully added the employee!";
         },
         (error) => {
+          this.result = "Something went wrong with your request!";
           console.error(error);
         }
       )

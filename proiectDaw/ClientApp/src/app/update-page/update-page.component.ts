@@ -3,35 +3,43 @@ import { HttpClient } from '@angular/common/http';
 import { FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-fire-page-component',
-  templateUrl: './fire-page.component.html'
+  selector: 'app-update-page-component',
+  templateUrl: './update-page.component.html'
 })
-export class FirePageComponent {
+export class UpdatePageComponent {
 
   private readonly httpClient: HttpClient;
   private readonly baseUrl: string;
 
   public result = "";
-  public name = new FormControl(null);
-  public email = new FormControl(null);
+  public oldname = new FormControl(null);
+  public oldemail = new FormControl(null);
+  public oldrole = new FormControl(null);
+  public newname = new FormControl(null);
+  public newemail = new FormControl(null);
+  public newrole = new FormControl(null);
 
   public buttonClicked() {
     this.httpClient.post<SoftwareDeveloper>(
-      this.baseUrl + "softwareDeveloper/delete",
+      this.baseUrl + "softwareDeveloper/update",
       {
-        name: this.name.value,
-        email: this.email.value,
+        oldname: this.oldname.value,
+        oldemail: this.oldemail.value,
+        oldrole: this.oldrole.value,
+        newname: this.newname.value,
+        newemail: this.newemail.value,
+        newrole: this.newrole.value,
       },
       { headers: { "Content-Type": "application/x-www-form-urlencoded" }}
     )
       .subscribe(
         (result) => {
           console.log("Success");
-          this.result = "Successfully fired the employee!";
+          this.result = "Successfully updated the employee";
         },
         (error) => {
-          console.error(error);
           this.result = "Something went wrong with your request!";
+          console.error(error);
         }
       )
   }
