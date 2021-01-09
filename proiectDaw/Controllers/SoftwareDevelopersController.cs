@@ -9,6 +9,7 @@ using proiectDaw.Data;
 using proiectDaw.Models;
 using Newtonsoft.Json.Linq;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace proiectDaw.Controllers
 {
@@ -30,6 +31,23 @@ namespace proiectDaw.Controllers
         public IEnumerable<SoftwareDeveloper> Get()
         { 
             return _context.softwareDevelopers.ToList();
+        }
+
+        [HttpGet("/getQuota")]
+        public IEnumerable<int> GetQuota()
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            var user = _context.Users.Where(usr => usr.Id == userId).First();
+
+            var dev = _context.softwareDevelopers.Include(e => e.Vacation).Where(dev => dev.Email == user.Email).First();
+            List<int> quota = new List<int>();
+
+            quota.Add(dev.Vacation.AnnualLeave);
+            quota.Add(dev.Vacation.BloodDonationLeave);
+            quota.Add(dev.Vacation.FourHourLeave);
+
+            return quota;
+
         }
 
         [HttpPost("/softwareDeveloper/create")]
@@ -168,29 +186,18 @@ namespace proiectDaw.Controllers
             {
                 var json = JObject.Parse(key);
 
-                var oldname = json["oldname"].ToString();
-                var oldemail = json["oldemail"].ToString();
-                var oldrole = json["oldrole"].ToString();
-                var oldproject = json["oldproject"].ToString();
+                var annual = json["annual"];
+                var blood = json["blood"];
+                var hours = json["hours"];
 
-                var newname = json["newname"].ToString();
-                var newemail = json["newemail"].ToString();
-                var newrole = json["newrole"].ToString();
-                var newproject = json["newproject"].ToString();
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+                var user = _context.Users.Where(usr => usr.Id == userId).First();
 
-                var dev = (_context.softwareDevelopers.Where(dev => dev.Name == oldname && dev.Email == oldemail)).First();
+                var dev = _context.softwareDevelopers.Include(e => e.Vacation).Where(dev => dev.Email == user.Email).First();
 
-                var oldprojectob = (_context.projects.Include(e => e.SoftwareDevelopers).Where(prj => prj.Id == dev.ProjectId)).First();
-                oldprojectob.SoftwareDevelopers.Remove(dev);
-
-                var newprojectob = (_context.projects.Include(e => e.SoftwareDevelopers).Where(prj => prj.ProjectName == newproject)).First();
-
-                dev.Name = newname;
-                dev.Email = newemail;
-                dev.Role = newrole;
-                dev.Project = newprojectob;
-
-                newprojectob.SoftwareDevelopers.Add(dev);
+                dev.Vacation.AnnualLeave = dev.Vacation.AnnualLeave - (int)annual;
+                dev.Vacation.BloodDonationLeave = dev.Vacation.BloodDonationLeave - (int)blood;
+                dev.Vacation.FourHourLeave = dev.Vacation.FourHourLeave - (int)hours;
 
                 _context.SaveChanges();
                 return true;

@@ -1,0 +1,25 @@
+﻿<h1>Vacation and free days formular!</h1>
+<h2>This is your quota:</h2>
+<p>Annual leave days: {{ annual }}</p>
+<p>Blood donation leave days: {{ blood }}</p>
+<p>4 hour leave hours: {{ hours }}</p>
+<h3>Please provide the required informations in the formular</h3>
+<br>
+
+<p>Annual leave:</p>
+<input type="text" [formControl]="annualInput" placeholder="Enter days...">
+
+<p>Blood donation leave:</p>
+<input type="text" [formControl]="bloodInput" placeholder="Enter days...">
+
+<p>4 hour leave:</p>
+<input type="text" [formControl]="hoursInput" placeholder="Enter hours...">
+
+<br>
+
+<button (click)="buttonClicked()">Submit the form!</button>
+
+<br>
+<br>
+
+<h4>{{ result }}</h4>

@@ -18,6 +18,7 @@ import { HirePageComponent } from './hire-page/hire-page.component';
 import { FirePageComponent } from './fire-page/fire-page.component';
 import { NoAuthorizationComponent } from './no-authorization/no-authorization.component';
 import { UpdatePageComponent } from './update-page/update-page.component';
+import { VacationComponent } from './vacation/vacation.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { UpdatePageComponent } from './update-page/update-page.component';
     FirePageComponent,
     NoAuthorizationComponent,
     UpdatePageComponent,
+    VacationComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -47,6 +49,7 @@ import { UpdatePageComponent } from './update-page/update-page.component';
       { path: 'firepage', component: FirePageComponent, canActivate: [AuthorizeGuard] },
       { path: 'no-authorization', component: NoAuthorizationComponent },
       { path: 'updatepage', component: UpdatePageComponent, canActivate: [AuthorizeGuard] },
+      { path: 'vacation', component: VacationComponent, canActivate: [AuthorizeGuard] },
     ])
   ],
   providers: [
