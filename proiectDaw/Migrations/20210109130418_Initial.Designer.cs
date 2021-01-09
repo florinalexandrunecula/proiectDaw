@@ -10,8 +10,8 @@ using proiectDaw.Data;
 namespace proiectDaw.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210108123203_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20210109130418_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

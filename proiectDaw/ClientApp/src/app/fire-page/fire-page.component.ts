@@ -14,26 +14,41 @@ export class FirePageComponent {
   public result = "";
   public name = new FormControl(null);
   public email = new FormControl(null);
+  public authorization: boolean[];
+  public authorize = false;
 
   public buttonClicked() {
-    this.httpClient.post<SoftwareDeveloper>(
-      this.baseUrl + "softwareDeveloper/delete",
-      {
-        name: this.name.value,
-        email: this.email.value,
-      },
-      { headers: { "Content-Type": "application/x-www-form-urlencoded" }}
-    )
-      .subscribe(
-        (result) => {
-          console.log("Success");
-          this.result = "Successfully fired the employee!";
-        },
-        (error) => {
-          console.error(error);
-          this.result = "Something went wrong with your request!";
-        }
-      )
+
+    this.httpClient.get<boolean[]>(this.baseUrl + "getUserRole").subscribe(result => {
+      this.authorization = result;
+      console.log({ result });
+      if (this.authorization[0] == true) {
+        this.authorize = true;
+      }
+      if (this.authorize == true) {
+        this.httpClient.post<SoftwareDeveloper>(
+          this.baseUrl + "softwareDeveloper/delete",
+          {
+            name: this.name.value,
+            email: this.email.value,
+          },
+          { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
+        )
+          .subscribe(
+            (result) => {
+              console.log("Success");
+              this.result = "Successfully fired the employee!";
+            },
+            (error) => {
+              console.error(error);
+              this.result = "Something went wrong with your request!";
+            }
+          )
+      }
+      else {
+        this.result = "You are not allowed to do this!";
+      }
+    }, error => console.error(error));
   }
 
   constructor(

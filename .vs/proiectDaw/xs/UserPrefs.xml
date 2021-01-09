@@ -1,22 +1,22 @@
 ﻿<Properties StartupConfiguration="{BC70918E-DEEB-407B-8786-0FEB815F4B19}|Default">
   <MonoDevelop.Ide.ItemProperties.proiectDaw PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="proiectDaw/ClientApp/src/app/nav-menu/nav-menu.component.html">
+  <MonoDevelop.Ide.Workbench ActiveDocument="proiectDaw/Controllers/SoftwareDevelopersController.cs">
     <Files>
       <File FileName="proiectDaw/ClientApp/package.json" Line="1" Column="1" />
-      <File FileName="proiectDaw/Controllers/SoftwareDevelopersController.cs" Line="149" Column="1" />
+      <File FileName="proiectDaw/Controllers/SoftwareDevelopersController.cs" Line="149" Column="36" />
       <File FileName="proiectDaw/Controllers/WeatherForecastController.cs" />
-      <File FileName="proiectDaw/ClientApp/src/app/app.module.ts" Line="50" Column="62" />
-      <File FileName="proiectDaw/ClientApp/src/app/hire-page/hire-page.component.ts" Line="20" Column="32" />
+      <File FileName="proiectDaw/ClientApp/src/app/app.module.ts" />
+      <File FileName="proiectDaw/ClientApp/src/app/hire-page/hire-page.component.ts" />
       <File FileName="proiectDaw/ClientApp/src/app/hire-page/hire-page.component.html" />
-      <File FileName="proiectDaw/ClientApp/src/app/nav-menu/nav-menu.component.html" Line="40" Column="18" />
-      <File FileName="proiectDaw/ClientApp/src/app/devlist/devlist.component.ts" Line="20" Column="4" />
+      <File FileName="proiectDaw/ClientApp/src/app/nav-menu/nav-menu.component.html" />
+      <File FileName="proiectDaw/ClientApp/src/app/devlist/devlist.component.ts" />
       <File FileName="proiectDaw/ClientApp/src/app/devlist/devlist.component.html" />
-      <File FileName="proiectDaw/ClientApp/src/app/fetch-data/fetch-data.component.ts" Line="22" Column="15" />
+      <File FileName="proiectDaw/ClientApp/src/app/fetch-data/fetch-data.component.ts" />
       <File FileName="proiectDaw/ClientApp/src/app/fetch-data/fetch-data.component.html" />
       <File FileName="proiectDaw/ClientApp/src/app/home/home.component.ts" />
       <File FileName="proiectDaw/Data/DbSeeder.cs" />
-      <File FileName="proiectDaw/Models/SoftwareDeveloper.cs" Line="30" Column="1" />
-      <File FileName="proiectDaw/Models/Project.cs" Line="1" Column="1" />
+      <File FileName="proiectDaw/Models/SoftwareDeveloper.cs" />
+      <File FileName="proiectDaw/Models/Project.cs" />
       <File FileName="proiectDaw/ClientApp/src/app/home/home.component.html" />
       <File FileName="proiectDaw/appsettings.json" />
       <File FileName="proiectDaw/Program.cs" />
@@ -31,20 +31,25 @@
       <File FileName="proiectDaw/ClientApp/tsconfig.json" />
       <File FileName="proiectDaw/ClientApp/README.md" />
       <File FileName="proiectDaw/ClientApp/src/app/fire-page/fire-page.component.html" />
-      <File FileName="proiectDaw/ClientApp/src/app/fire-page/fire-page.component.ts" Line="30" Column="35" />
+      <File FileName="proiectDaw/ClientApp/src/app/fire-page/fire-page.component.ts" />
       <File FileName="proiectDaw/Dockerfile" />
       <File FileName="docker-compose.yml" />
       <File FileName="../../../../Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/docker/MonoDevelop.Docker/MSbuild/Sdks/Microsoft.Docker.Sdk/build/Microsoft.VisualStudio.Docker.Compose.targets" />
       <File FileName="proiectDaw/ClientApp/dist 2/polyfills-es2015 2.js" />
       <File FileName="proiectDaw/ClientApp/dist 2/polyfills-es2015.js 2.map" />
       <File FileName="proiectDaw/app.db" />
-      <File FileName="proiectDaw/ClientApp/src/app/app.component.html" Line="1" Column="1" />
-      <File FileName="proiectDaw/ClientApp/src/app/fire-page/fire-page.component.spec.ts" Line="1" Column="1" />
+      <File FileName="proiectDaw/ClientApp/src/app/app.component.html" />
+      <File FileName="proiectDaw/ClientApp/src/app/fire-page/fire-page.component.spec.ts" />
       <File FileName="proiectDaw/ClientApp/src/app/hire-page/hire-page.component.spec.ts" />
-      <File FileName="proiectDaw/Controllers/UserController.cs" Line="39" Column="28" />
-      <File FileName="proiectDaw/Models/Vacation.cs" Line="1" Column="1" />
-      <File FileName="proiectDaw/ClientApp/src/app/update-page/update-page.component.html" Line="21" Column="38" />
-      <File FileName="proiectDaw/ClientApp/src/app/update-page/update-page.component.ts" Line="38" Column="59" />
+      <File FileName="proiectDaw/Controllers/UserController.cs" />
+      <File FileName="proiectDaw/Models/Vacation.cs" />
+      <File FileName="proiectDaw/ClientApp/src/app/update-page/update-page.component.html" />
+      <File FileName="proiectDaw/ClientApp/src/app/update-page/update-page.component.ts" />
+      <File FileName="proiectDaw/ClientApp/src/app/no-authorization/no-authorization.component.ts" />
+      <File FileName="proiectDaw/ClientApp/src/app/counter/counter.component.html" />
+      <File FileName="proiectDaw/ClientApp/src/app/counter/counter.component.ts" />
+      <File FileName="proiectDaw/ClientApp/src/app/no-authorization/no-authorization.component.html" />
+      <File FileName="proiectDaw/Controllers/ProjectController.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -55,15 +60,14 @@
               <Node name="ClientApp" expanded="True">
                 <Node name="src" expanded="True">
                   <Node name="app" expanded="True">
-                    <Node name="hire-page" expanded="True" />
-                    <Node name="nav-menu" expanded="True">
-                      <Node name="nav-menu.component.html" selected="True" />
-                    </Node>
+                    <Node name="devlist" expanded="True" />
                     <Node name="update-page" expanded="True" />
                   </Node>
                 </Node>
               </Node>
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="SoftwareDevelopersController.cs" selected="True" />
+              </Node>
               <Node name="Data" expanded="True" />
               <Node name="Models" expanded="True" />
             </Node>

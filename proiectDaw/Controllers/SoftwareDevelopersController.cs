@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using proiectDaw.Data;
 using proiectDaw.Models;
 using Newtonsoft.Json.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace proiectDaw.Controllers
 {
@@ -96,9 +97,8 @@ namespace proiectDaw.Controllers
 
                 var dev = (_context.softwareDevelopers.Where(dev => dev.Name == name && dev.Email == email)).First();
 
-                var project = (_context.projects.Where(prj => prj.Id == dev.ProjectId)).First();
+                var project = (_context.projects.Include(e => e.SoftwareDevelopers).Where(prj => prj.Id == dev.ProjectId)).First();
                 project.SoftwareDevelopers.Remove(dev);
-                _context.projects.Update(project);
 
                 var vacation = (_context.vacations.Where(vac => vac.SoftwareDeveloperId == dev.Id)).First();
                 _context.vacations.Remove(vacation);
@@ -129,32 +129,74 @@ namespace proiectDaw.Controllers
                 var oldname = json["oldname"].ToString();
                 var oldemail = json["oldemail"].ToString();
                 var oldrole = json["oldrole"].ToString();
+                var oldproject = json["oldproject"].ToString();
 
                 var newname = json["newname"].ToString();
                 var newemail = json["newemail"].ToString();
                 var newrole = json["newrole"].ToString();
+                var newproject = json["newproject"].ToString();
 
                 var dev = (_context.softwareDevelopers.Where(dev => dev.Name == oldname && dev.Email == oldemail)).First();
 
-                var project = (_context.projects.Where(prj => prj.Id == dev.ProjectId)).First();
-                project.SoftwareDevelopers.Remove(dev);
+                var oldprojectob = (_context.projects.Include(e => e.SoftwareDevelopers).Where(prj => prj.Id == dev.ProjectId)).First();
+                oldprojectob.SoftwareDevelopers.Remove(dev);
+
+                var newprojectob = (_context.projects.Include(e => e.SoftwareDevelopers).Where(prj => prj.ProjectName == newproject)).First();
 
                 dev.Name = newname;
                 dev.Email = newemail;
                 dev.Role = newrole;
-                _context.softwareDevelopers.Update(dev);
+                dev.Project = newprojectob;
 
-                project.SoftwareDevelopers.Add(dev);
-                _context.projects.Update(project);
+                newprojectob.SoftwareDevelopers.Add(dev);
 
                 _context.SaveChanges();
                 return true;
             }
 
             return true;
+        }
 
+        [HttpPost("/softwareDeveloper/vacation")]
+        public Boolean Vacation()
+        {
+            Console.WriteLine("Package received...");
 
+            var received = Request.Form.Keys;
 
+            foreach (var key in received)
+            {
+                var json = JObject.Parse(key);
+
+                var oldname = json["oldname"].ToString();
+                var oldemail = json["oldemail"].ToString();
+                var oldrole = json["oldrole"].ToString();
+                var oldproject = json["oldproject"].ToString();
+
+                var newname = json["newname"].ToString();
+                var newemail = json["newemail"].ToString();
+                var newrole = json["newrole"].ToString();
+                var newproject = json["newproject"].ToString();
+
+                var dev = (_context.softwareDevelopers.Where(dev => dev.Name == oldname && dev.Email == oldemail)).First();
+
+                var oldprojectob = (_context.projects.Include(e => e.SoftwareDevelopers).Where(prj => prj.Id == dev.ProjectId)).First();
+                oldprojectob.SoftwareDevelopers.Remove(dev);
+
+                var newprojectob = (_context.projects.Include(e => e.SoftwareDevelopers).Where(prj => prj.ProjectName == newproject)).First();
+
+                dev.Name = newname;
+                dev.Email = newemail;
+                dev.Role = newrole;
+                dev.Project = newprojectob;
+
+                newprojectob.SoftwareDevelopers.Add(dev);
+
+                _context.SaveChanges();
+                return true;
+            }
+
+            return true;
         }
     }
 }

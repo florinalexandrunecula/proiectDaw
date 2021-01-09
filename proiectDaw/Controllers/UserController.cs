@@ -28,15 +28,20 @@ namespace proiectDaw.Controllers
         }
 
         [HttpGet("/getUserRole")]
-        public IEnumerable<string> GetUserRole()
+        public IEnumerable<bool> GetUserRole()
         {
             var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
             var user = _context.Users.Where(usr => usr.Id == userId).First();
+            var auth = false;
 
             var role = _context.softwareDevelopers.Where(dev => dev.Email == user.Email).First().Role;
-            List<string> userRole = new List<string>();
-            userRole.Add(role);
-            return userRole;
+            if (role == "Admin") {
+                auth = true;
+            }
+
+            List<bool> authlist = new List<bool>();
+            authlist.Add(auth);
+            return authlist;
         }
     }
 }

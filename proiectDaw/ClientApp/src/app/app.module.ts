@@ -42,12 +42,11 @@ import { UpdatePageComponent } from './update-page/update-page.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
-      //{ path: 'devlist', component: DevlistComponent, canActivate: [AuthorizeGuard] },
-      { path: 'devlist', component: DevlistComponent },
-      { path: 'hirepage', component: HirePageComponent },
-      { path: 'firepage', component: FirePageComponent },
+      { path: 'devlist', component: DevlistComponent, canActivate: [AuthorizeGuard] },
+      { path: 'hirepage', component: HirePageComponent, canActivate: [AuthorizeGuard] },
+      { path: 'firepage', component: FirePageComponent, canActivate: [AuthorizeGuard] },
       { path: 'no-authorization', component: NoAuthorizationComponent },
-      { path: 'updatepage', component: UpdatePageComponent },
+      { path: 'updatepage', component: UpdatePageComponent, canActivate: [AuthorizeGuard] },
     ])
   ],
   providers: [
