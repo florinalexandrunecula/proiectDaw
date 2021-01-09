@@ -19,6 +19,8 @@ import { FirePageComponent } from './fire-page/fire-page.component';
 import { NoAuthorizationComponent } from './no-authorization/no-authorization.component';
 import { UpdatePageComponent } from './update-page/update-page.component';
 import { VacationComponent } from './vacation/vacation.component';
+import { TicketComponent } from './ticket/ticket.component';
+import { ReviewComponent } from './review/review.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { VacationComponent } from './vacation/vacation.component';
     NoAuthorizationComponent,
     UpdatePageComponent,
     VacationComponent,
+    TicketComponent,
+    ReviewComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -50,6 +54,8 @@ import { VacationComponent } from './vacation/vacation.component';
       { path: 'no-authorization', component: NoAuthorizationComponent },
       { path: 'updatepage', component: UpdatePageComponent, canActivate: [AuthorizeGuard] },
       { path: 'vacation', component: VacationComponent, canActivate: [AuthorizeGuard] },
+      { path: 'ticket', component: TicketComponent, canActivate: [AuthorizeGuard] },
+      { path: 'review', component: ReviewComponent },
     ])
   ],
   providers: [

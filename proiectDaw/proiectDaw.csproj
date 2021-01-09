@@ -43,6 +43,8 @@
     <Folder Include="ClientApp\src\app\no-authorization\" />
     <Folder Include="ClientApp\src\app\update-page\" />
     <Folder Include="ClientApp\src\app\vacation\" />
+    <Folder Include="ClientApp\src\app\ticket\" />
+    <Folder Include="ClientApp\src\app\review\" />
   </ItemGroup>
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->

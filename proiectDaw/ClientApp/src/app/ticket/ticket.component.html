@@ -1,0 +1,40 @@
+﻿<h1 id="tableLabel">Tickets</h1>
+
+<p *ngIf="!tickets"><em>No tickets found</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="tickets">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Owner</th>
+            <th>Title</th>
+            <th>Desription</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ticket of tickets">
+            <td>{{ ticket.id }}</td>
+            <td>{{ ticket.owner }}</td>
+            <td>{{ ticket.title }}</td>
+            <td>{{ ticket.description }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>If you have any issues, please create a ticket!</h3>
+<h5>Someone will take care of the issue.</h5>
+<br>
+
+<p>Title:</p>
+<input type="text" [formControl]="title" placeholder="Enter title...">
+
+<p>Description:</p>
+<textarea type="text" id="form7" [formControl]="description" placeholder="Enter description..." class="md-textarea md-textarea-auto form-control" mdbInput></textarea>
+
+<br>
+
+<button (click)="CreateTicket()">Create Ticket</button>
+
+<br>
+
+<p>{{ result }}</p>

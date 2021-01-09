@@ -1,30 +1,30 @@
-﻿<Properties StartupConfiguration="{BC70918E-DEEB-407B-8786-0FEB815F4B19}|Default">
+﻿<Properties StartupConfiguration="{61675B32-DDF7-427B-BB2C-24E9EDBAE8AE}|Default">
   <MonoDevelop.Ide.ItemProperties.proiectDaw PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="proiectDaw/ClientApp/src/app/vacation/vacation.component.html">
+  <MonoDevelop.Ide.Workbench ActiveDocument="proiectDaw/ClientApp/src/app/vacation/vacation.component.ts">
     <Files>
       <File FileName="proiectDaw/ClientApp/package.json" Line="1" Column="1" />
-      <File FileName="proiectDaw/Controllers/SoftwareDevelopersController.cs" Line="161" Column="32" />
+      <File FileName="proiectDaw/Controllers/SoftwareDevelopersController.cs" Line="191" Column="38" />
       <File FileName="proiectDaw/Controllers/WeatherForecastController.cs" />
-      <File FileName="proiectDaw/ClientApp/src/app/app.module.ts" Line="35" Column="23" />
+      <File FileName="proiectDaw/ClientApp/src/app/app.module.ts" Line="58" Column="52" />
       <File FileName="proiectDaw/ClientApp/src/app/hire-page/hire-page.component.ts" />
       <File FileName="proiectDaw/ClientApp/src/app/hire-page/hire-page.component.html" />
-      <File FileName="proiectDaw/ClientApp/src/app/nav-menu/nav-menu.component.html" Line="30" Column="84" />
+      <File FileName="proiectDaw/ClientApp/src/app/nav-menu/nav-menu.component.html" />
       <File FileName="proiectDaw/ClientApp/src/app/devlist/devlist.component.ts" />
       <File FileName="proiectDaw/ClientApp/src/app/devlist/devlist.component.html" />
       <File FileName="proiectDaw/ClientApp/src/app/fetch-data/fetch-data.component.ts" />
       <File FileName="proiectDaw/ClientApp/src/app/fetch-data/fetch-data.component.html" />
-      <File FileName="proiectDaw/ClientApp/src/app/home/home.component.ts" />
-      <File FileName="proiectDaw/Data/DbSeeder.cs" />
-      <File FileName="proiectDaw/Models/SoftwareDeveloper.cs" Line="1" Column="1" />
+      <File FileName="proiectDaw/ClientApp/src/app/home/home.component.ts" Line="1" Column="1" />
+      <File FileName="proiectDaw/Data/DbSeeder.cs" Line="1" Column="1" />
+      <File FileName="proiectDaw/Models/SoftwareDeveloper.cs" Line="11" Column="9" />
       <File FileName="proiectDaw/Models/Project.cs" Line="1" Column="1" />
-      <File FileName="proiectDaw/ClientApp/src/app/home/home.component.html" />
+      <File FileName="proiectDaw/ClientApp/src/app/home/home.component.html" Line="11" Column="68" />
       <File FileName="proiectDaw/appsettings.json" />
       <File FileName="proiectDaw/Program.cs" />
       <File FileName="proiectDaw/Startup.cs" />
       <File FileName="proiectDaw/proiectDaw.csproj" />
       <File FileName="proiectDaw/appsettings.Development.json" />
       <File FileName="proiectDaw/Controllers/OidcConfigurationController.cs" />
-      <File FileName="proiectDaw/Data/ApplicationDbContext.cs" />
+      <File FileName="proiectDaw/Data/ApplicationDbContext.cs" Line="38" Column="49" />
       <File FileName="proiectDaw/Models/ApplicationUser.cs" />
       <File FileName="proiectDaw/ClientApp/dist 2/styles 2.css" />
       <File FileName="proiectDaw/ClientApp/tslint.json" />
@@ -41,18 +41,26 @@
       <File FileName="proiectDaw/ClientApp/src/app/app.component.html" />
       <File FileName="proiectDaw/ClientApp/src/app/fire-page/fire-page.component.spec.ts" />
       <File FileName="proiectDaw/ClientApp/src/app/hire-page/hire-page.component.spec.ts" />
-      <File FileName="proiectDaw/Controllers/UserController.cs" Line="1" Column="1" />
-      <File FileName="proiectDaw/Models/Vacation.cs" Line="1" Column="1" />
+      <File FileName="proiectDaw/Controllers/UserController.cs" Line="34" Column="78" />
+      <File FileName="proiectDaw/Models/Vacation.cs" />
       <File FileName="proiectDaw/ClientApp/src/app/update-page/update-page.component.html" />
-      <File FileName="proiectDaw/ClientApp/src/app/update-page/update-page.component.ts" />
+      <File FileName="proiectDaw/ClientApp/src/app/update-page/update-page.component.ts" Line="28" Column="5" />
       <File FileName="proiectDaw/ClientApp/src/app/no-authorization/no-authorization.component.ts" />
       <File FileName="proiectDaw/ClientApp/src/app/counter/counter.component.html" />
       <File FileName="proiectDaw/ClientApp/src/app/counter/counter.component.ts" />
       <File FileName="proiectDaw/ClientApp/src/app/no-authorization/no-authorization.component.html" />
-      <File FileName="proiectDaw/Controllers/ProjectController.cs" Line="1" Column="1" />
-      <File FileName="proiectDaw/ClientApp/src/app/vacation/vacation.component.ts" Line="76" Column="28" />
-      <File FileName="proiectDaw/ClientApp/src/app/nav-menu/nav-menu.component.ts" Line="1" Column="1" />
-      <File FileName="proiectDaw/ClientApp/src/app/vacation/vacation.component.html" Line="1" Column="7" />
+      <File FileName="proiectDaw/Controllers/ProjectController.cs" Line="60" Column="10" />
+      <File FileName="proiectDaw/ClientApp/src/app/vacation/vacation.component.ts" Line="43" Column="9" />
+      <File FileName="proiectDaw/ClientApp/src/app/nav-menu/nav-menu.component.ts" />
+      <File FileName="proiectDaw/ClientApp/src/app/vacation/vacation.component.html" />
+      <File FileName="proiectDaw/Models/Ticket.cs" Line="20" Column="6" />
+      <File FileName="proiectDaw/ClientApp/src/app/ticket/ticket.component.ts" Line="69" Column="12" />
+      <File FileName="proiectDaw/ClientApp/src/app/ticket/ticket.component.html" Line="3" Column="41" />
+      <File FileName="proiectDaw/Controllers/TicketsController.cs" Line="42" Column="26" />
+      <File FileName="proiectDaw/Models/Review.cs" Line="19" Column="39" />
+      <File FileName="proiectDaw/Controllers/ReviewsController.cs" Line="31" Column="1" />
+      <File FileName="proiectDaw/ClientApp/src/app/review/review.component.html" Line="36" Column="30" />
+      <File FileName="proiectDaw/ClientApp/src/app/review/review.component.ts" Line="63" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -63,17 +71,12 @@
               <Node name="ClientApp" expanded="True">
                 <Node name="src" expanded="True">
                   <Node name="app" expanded="True">
-                    <Node name="nav-menu" expanded="True" />
-                    <Node name="update-page" expanded="True" />
                     <Node name="vacation" expanded="True">
-                      <Node name="vacation.component.html" selected="True" />
+                      <Node name="vacation.component.ts" selected="True" />
                     </Node>
                   </Node>
                 </Node>
               </Node>
-              <Node name="Controllers" expanded="True" />
-              <Node name="Data" expanded="True" />
-              <Node name="Models" expanded="True" />
             </Node>
           </Node>
         </State>

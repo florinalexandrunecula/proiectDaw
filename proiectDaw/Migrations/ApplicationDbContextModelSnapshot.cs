@@ -315,6 +315,29 @@ namespace proiectDaw.Migrations
                     b.ToTable("projects");
                 });
 
+            modelBuilder.Entity("proiectDaw.Models.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("owner")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("rating")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("reviews");
+                });
+
             modelBuilder.Entity("proiectDaw.Models.SoftwareDeveloper", b =>
                 {
                     b.Property<int>("Id")
@@ -345,6 +368,30 @@ namespace proiectDaw.Migrations
                     b.HasIndex("ProjectId");
 
                     b.ToTable("softwareDevelopers");
+                });
+
+            modelBuilder.Entity("proiectDaw.Models.Ticket", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("owner")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("title")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("tickets");
                 });
 
             modelBuilder.Entity("proiectDaw.Models.Vacation", b =>

@@ -1,0 +1,40 @@
+﻿<h1 id="tableLabel">Reviews</h1>
+
+<p *ngIf="!reviews"><em>No reviews found</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="reviews">
+    <thead>
+        <tr>
+            <th>Owner</th>
+            <th>Desription</th>
+            <th>Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let review of reviews">
+            <td>{{ review.owner }}</td>
+            <td>{{ review.description }}</td>
+            <td>{{ review.rating }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Want to review our company? Please provide all your opinions below!</h3>
+<br>
+
+<p>Reviewer:</p>
+<input type="text" [formControl]="owner" placeholder="Enter reviewer name...">
+
+<p>Rating:</p>
+<input type="text" [formControl]="rating" placeholder="Enter rating...">
+
+<p>Description:</p>
+<textarea type="text" id="form7" [formControl]="description" placeholder="Enter description..." class="md-textarea md-textarea-auto form-control" mdbInput></textarea>
+
+<br>
+
+<button (click)="CreateReview()">Create Review!</button>
+
+<br>
+
+<p>{{ result }}</p>

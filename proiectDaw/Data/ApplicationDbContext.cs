@@ -34,6 +34,8 @@ namespace proiectDaw.Data
         public DbSet<SoftwareDeveloper> softwareDevelopers { get; set; }
         public DbSet<Project> projects { get; set; }
         public DbSet<Vacation> vacations { get; set; }
+        public DbSet<Ticket> tickets { get; set; }
+        public DbSet<Review> reviews { get; set; }
     }
 
 }

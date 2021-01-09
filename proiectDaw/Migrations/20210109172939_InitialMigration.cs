@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace proiectDaw.Migrations
 {
-    public partial class Initial : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -92,6 +92,36 @@ namespace proiectDaw.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_projects", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "reviews",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    owner = table.Column<string>(nullable: false),
+                    description = table.Column<string>(nullable: false),
+                    rating = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_reviews", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "tickets",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    owner = table.Column<string>(nullable: false),
+                    title = table.Column<string>(nullable: false),
+                    description = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_tickets", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -337,6 +367,12 @@ namespace proiectDaw.Migrations
 
             migrationBuilder.DropTable(
                 name: "PersistedGrants");
+
+            migrationBuilder.DropTable(
+                name: "reviews");
+
+            migrationBuilder.DropTable(
+                name: "tickets");
 
             migrationBuilder.DropTable(
                 name: "vacations");
